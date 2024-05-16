@@ -9,17 +9,19 @@ int ex1_malloc() {
     scanf("%d", &tamanho); // Solicita ao usuário para digitar o tamanho do array
 
     // Alocação dinâmica de memória usando malloc
-    ptr = (int *)malloc(tamanho * sizeof(int));
+    ptr = (int *) malloc(tamanho * sizeof(int));
 
     // Verifica se a alocação de memória foi bem-sucedida
     if (ptr == NULL) {
-        printf("Erro! Não foi possível alocar memória.\n");
+        printf("Erro! Nao foi possivel alocar memória.\n");
+        getchar();
+        getchar();
         return 1; // Termina o programa com código de erro
     }
 
     // Preenche o array alocado dinamicamente com números
     for (int i = 0; i < tamanho; i++) {
-        ptr[i] = i + 1; // Preenche o array com números de 1 a tamanho
+        ptr[i] = i + 10; // Preenche o array com números de 10 a tamanho
     }
 
     // Imprime os elementos do array
@@ -28,7 +30,8 @@ int ex1_malloc() {
         printf("%d ", ptr[i]);
     }
     printf("\n");
-
+    getchar();
+    getchar();
     // Libera a memória alocada dinamicamente
     free(ptr);
 

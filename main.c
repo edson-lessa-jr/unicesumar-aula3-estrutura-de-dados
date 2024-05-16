@@ -2,11 +2,18 @@
 #include <locale.h>
 
 int ex1_malloc();
+
 int ex2_calloc();
+
 int ex3_realloc();
+
 int ex4_notas();
+
 int ex5_matriz();
+
 int ex6_registro();
+
+int ex7_comparacao_memoria();
 
 int main(void) {
     // Define a codificação de caracteres para UTF-8
@@ -25,6 +32,7 @@ int main(void) {
         printf("4. Exemplo alocacao dinamica vetor (notas)\n");
         printf("5. Exemplo alocacao dinamica matriz (alunos)\n");
         printf("6. Exemplo alocacao dinamica registro (alunos)\n");
+        printf("7. Exemplo camparacao de alocacao de memoria\n");
         printf("0. Sair\n");
         printf("Escolha uma opcao: ");
         scanf("%d", &opcao);
@@ -48,6 +56,9 @@ int main(void) {
                 break;
             case 6:
                 ex6_registro();
+                break;
+            case 7:
+                ex7_comparacao_memoria();
                 break;
             case 0:
                 printf("Saindo do programa. Obrigado!\n");

@@ -9,14 +9,19 @@ int ex3_realloc() {
     scanf("%d", &tamanho); // Solicita ao usuário para digitar o tamanho inicial do array
 
     // Alocação dinâmica de memória usando malloc
-    ptr = (int *)malloc(tamanho * sizeof(int));
+    ptr = (int *) malloc(tamanho * sizeof(int));
 
     // Verifica se a alocação de memória foi bem-sucedida
     if (ptr == NULL) {
-        printf("Erro! Não foi possível alocar memória.\n");
+        printf("Erro! Não foi possivel alocar memoria.\n");
+        getchar();
+        getchar();
         return 1; // Termina o programa com código de erro
     }
-
+    // Preenche o array alocado dinamicamente com números
+    for (int i = 0; i < tamanho; i++) {
+        ptr[i] = i + 100; // Preenche o array com números de 100 a tamanho
+    }
     // Imprime os elementos do array inicial
     printf("Elementos do array inicial:\n");
     for (int i = 0; i < tamanho; i++) {
@@ -24,26 +29,28 @@ int ex3_realloc() {
     }
     printf("\n");
 
+
     int novo_tamanho; // Variável para armazenar o novo tamanho do array
     printf("Digite o novo tamanho do array: ");
     scanf("%d", &novo_tamanho); // Solicita ao usuário para digitar o novo tamanho do array
 
     // Realocação dinâmica de memória usando realloc
-    ptr = (int *)realloc(ptr, novo_tamanho * sizeof(int));
+    ptr = (int *) realloc(ptr, novo_tamanho * sizeof(int));
 
     // Verifica se a realocação de memória foi bem-sucedida
     if (ptr == NULL) {
-        printf("Erro! Não foi possível realocar memória.\n");
+        printf("Erro! Nao foi possivel realocar memoria.\n");
         return 1; // Termina o programa com código de erro
     }
 
     // Imprime os elementos do array após a realocação
-    printf("Elementos do array após a realocação:\n");
+    printf("Elementos do array apos a realocacao:\n");
     for (int i = 0; i < novo_tamanho; i++) {
         printf("%d ", ptr[i]);
     }
     printf("\n");
-
+    getchar();
+    getchar();
     // Libera a memória alocada dinamicamente
     free(ptr);
 

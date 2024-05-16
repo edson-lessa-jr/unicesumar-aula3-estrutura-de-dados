@@ -3,11 +3,11 @@
 
 int ex4_notas() {
     int num_notas; // Variável para armazenar o número de notas do aluno
-    printf("Digite o número de notas do aluno: ");
+    printf("Digite o numero de notas do aluno: ");
     scanf("%d", &num_notas); // Solicita ao usuário para digitar o número de notas
 
     // Alocação dinâmica de memória para armazenar as notas
-    float *notas = (float *)malloc(num_notas * sizeof(float));
+    float *notas = (float *) malloc(num_notas * sizeof(float));
 /**
 sizeof(float): Esta parte determina o tamanho em bytes de um
  número do tipo float.  Um float é geralmente representado
@@ -38,7 +38,7 @@ float *notas = ...: Finalmente, armazenamos o ponteiro retornado
 */
     // Verifica se a alocação de memória foi bem-sucedida
     if (notas == NULL) {
-        printf("Erro! Não foi possível alocar memória.\n");
+        printf("Erro! Nao foi possivel alocar memoria.\n");
         return 1; // Termina o programa com código de erro
     }
 
@@ -57,8 +57,9 @@ float *notas = ...: Finalmente, armazenamos o ponteiro retornado
     float media = soma / num_notas;
 
     // Imprime a média das notas
-    printf("A média do aluno é: %.2f\n", media);
-
+    printf("A media do aluno: %.2f\n", media);
+    getchar();
+    getchar();
     // Libera a memória alocada dinamicamente
     free(notas);
 

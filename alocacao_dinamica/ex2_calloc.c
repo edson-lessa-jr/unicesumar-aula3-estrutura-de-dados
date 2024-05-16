@@ -9,11 +9,13 @@ int ex2_calloc() {
     scanf("%d", &tamanho); // Solicita ao usuário para digitar o tamanho do array
 
     // Alocação dinâmica de memória usando calloc
-    ptr = (int *)calloc(tamanho, sizeof(int));
+    ptr = (int *) calloc(tamanho, sizeof(int));
 
     // Verifica se a alocação de memória foi bem-sucedida
     if (ptr == NULL) {
-        printf("Erro! Não foi possível alocar memória.\n");
+        printf("Erro! Nao foi possivel alocar memoria.\n");
+        getchar();
+        getchar();
         return 1; // Termina o programa com código de erro
     }
 
@@ -23,7 +25,8 @@ int ex2_calloc() {
         printf("%d ", ptr[i]);
     }
     printf("\n");
-
+    getchar();
+    getchar();
     // Libera a memória alocada dinamicamente
     free(ptr);
 

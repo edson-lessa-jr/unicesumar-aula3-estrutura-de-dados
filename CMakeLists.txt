@@ -12,4 +12,5 @@ add_executable(aula3 main.c
         alocacao_dinamica_vetor/ex4_notas.c
         alocacao_dinamica_vetor/ex5_matriz.c
         alocacao_dinamica_vetor/ex6_registro.c
+        alocacao_dinamica_vetor/ex7_comparacao_memoria.c
 )

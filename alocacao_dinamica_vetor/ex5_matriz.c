@@ -3,17 +3,17 @@
 
 int ex5_matriz() {
     int num_alunos, num_notas; // Variáveis para armazenar o número de alunos e de notas por aluno
-    printf("Digite o número de alunos: ");
+    printf("Digite o numero de alunos: ");
     scanf("%d", &num_alunos);
     // Solicita ao usuário para digitar o número de alunos
 
-    printf("Digite o número de notas por aluno: ");
+    printf("Digite o numero de notas por aluno: ");
     scanf("%d", &num_notas);
     // Solicita ao usuário para digitar o número de notas por aluno
 
     // Alocação dinâmica de memória para armazenar as notas
     // dos alunos em uma matriz
-    float **notas = (float **)malloc(num_alunos * sizeof(float *));
+    float **notas = (float **) malloc(num_alunos * sizeof(float *));
     /**
      sizeof(float *): calcula o tamanho em bytes de um ponteiro
      para float.
@@ -46,12 +46,14 @@ int ex5_matriz() {
      ponteiros para as linhas da matriz.
      */
     for (int i = 0; i < num_alunos; i++) {
-        notas[i] = (float *)malloc(num_notas * sizeof(float));
+        notas[i] = (float *) malloc(num_notas * sizeof(float));
     }
 
     // Verifica se a alocação de memória foi bem-sucedida
     if (notas == NULL) {
-        printf("Erro! Não foi possível alocar memória.\n");
+        printf("Erro! Nao foi possivel alocar memoria.\n");
+        getchar();
+        getchar();
         return 1; // Termina o programa com código de erro
     }
 
@@ -71,9 +73,10 @@ int ex5_matriz() {
         for (int j = 0; j < num_notas; j++) {
             printf("%.2f ", notas[i][j]);
         }
-        printf("\n");
+        printf("-----------------------\n");
     }
-
+    getchar();
+    getchar();
     // Libera a memória alocada dinamicamente
     for (int i = 0; i < num_alunos; i++) {
         free(notas[i]);
