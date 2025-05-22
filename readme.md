@@ -102,6 +102,4 @@ unicesumar-aula3-estrutura-de-dados/
 
 Este projeto está licenciado sob a [MIT License](LICENSE).
 
----
 
-Sinta-se à vontade para adaptar este README conforme as necessidades do seu curso ou projeto!
